@@ -27,6 +27,9 @@ import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -84,8 +87,9 @@ public class Routes extends Fragment {
                 startLat = Integer.parseInt(mstartLat.getText().toString());
                 StartLong = Integer.parseInt(mStartLong.getText().toString());
 
-                routeId = genereateRouteId(currdate);
+
                 userId = settings.getString("userId",null);
+                routeId = genereateRouteId(userId);
 
                 if (userId != null)
                 {
@@ -100,6 +104,8 @@ public class Routes extends Fragment {
                             " \"routeName\": \"" + mRouteName.getText().toString() +"\" }";
                     invokeFunction(JSON_request);
                 }
+                else
+                    Toast.makeText(getActivity(),"Create UserId first",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -166,7 +172,7 @@ public class Routes extends Fragment {
                         mstartLat.setText("");
                         mStartLong.setText("");
                         mEndLong.setText("");
-                        
+
                         Toast.makeText(getActivity(),"Data is Stored to database",Toast.LENGTH_SHORT).show();
 
                     }
@@ -199,19 +205,25 @@ public class Routes extends Fragment {
                 .create().show();
     }
 
-    public String genereateRouteId(Date currDate)
+    public String genereateRouteId(String UserID)
     {
         int day;
         int month;
         int year;
 
+
         String ID;
 
-        day =currDate.getDay();
-        month = currDate.getMonth();
-        year = currDate.getYear();
+       Calendar cal = Calendar.getInstance();
 
-        ID =  String.valueOf(month) + String.valueOf(day)  + String.valueOf(year);
+        day =cal.get(Calendar.DAY_OF_MONTH);
+        month = cal.get(Calendar.MONTH);
+        year = cal.get(Calendar.YEAR);
+
+        int index = (int)(100 * Math.random());
+
+        ID = String.valueOf(index) + String.valueOf(day) + String.valueOf(month)+String.valueOf(year) ;
+
 
         return ID;
     }
