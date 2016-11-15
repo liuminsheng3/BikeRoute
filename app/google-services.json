@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "429183366011",
+    "firebase_url": "https://bikeroute-6c76b.firebaseio.com",
+    "project_id": "bikeroute-6c76b",
+    "storage_bucket": "bikeroute-6c76b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429183366011:android:07c181caf706615f",
+        "android_client_info": {
+          "package_name": "com.example.minsheng.bikeroute"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429183366011-kgcmh271o87o5son1vjk9ojk6iruuh3d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxhr6WtFnf-Jun0brGtFkPUTNYoDGW5DU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
