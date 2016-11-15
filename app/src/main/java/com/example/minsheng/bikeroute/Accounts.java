@@ -82,7 +82,7 @@ public class Accounts extends Fragment {
                         " \"Date\": \"" + Date + "\" ," +
                         " \"userId\": \"" + "" +"\" }";
                 userID = mFirstName.getText().toString() + mLastName.getText().toString();
-                String USERID = settings.getString("userId",null);
+                String USERID = settings.getString("userId","no User ID");
 
                 if(!USERID.equals(userID))
                 {
